@@ -63,7 +63,8 @@ public class TargetedHypernymAPI {
             @QueryParam("entity_type") String entity_type,
             @QueryParam("knowledge_base") String knowledge_base,
             @QueryParam("priority_entity_linking") boolean priorityEntityLinking,
-            @QueryParam("provenance") String provenance
+            @QueryParam("provenance") String provenance,
+            @QueryParam("types_filter") String typesFilter
             ) {
 
         Logger.getLogger(TargetedHypernymAPI.class.getName()).log(Level.INFO, "========= accepted Web APP request =========");
@@ -72,13 +73,14 @@ public class TargetedHypernymAPI {
         Logger.getLogger(TargetedHypernymAPI.class.getName()).log(Level.INFO, "knowledge_base: " + knowledge_base);
         Logger.getLogger(TargetedHypernymAPI.class.getName()).log(Level.INFO, "priority_entity_linking: " + priorityEntityLinking);
         Logger.getLogger(TargetedHypernymAPI.class.getName()).log(Level.INFO, "provenance: " + provenance);
+        Logger.getLogger(TargetedHypernymAPI.class.getName()).log(Level.INFO, "types_filter: " + typesFilter);
         Logger.getLogger(TargetedHypernymAPI.class.getName()).log(Level.INFO, "body: " + body);
         Logger.getLogger(TargetedHypernymAPI.class.getName()).log(Level.INFO, "Started prcessing request...");
         
         TextProcessor r = TextProcessor.getInstance();
         String[] provs = provenance.split(",");
         List<Hypernym> results = new ArrayList<Hypernym>();
-        results = r.processText_MT(body, lang, entity_type, knowledge_base, provs, priorityEntityLinking);            
+        results = r.processText_MT(body, lang, entity_type, knowledge_base, provs, priorityEntityLinking, typesFilter);            
         GenericEntity<List<Hypernym>> entity = new GenericEntity<List<Hypernym>>(results){};
         Logger.getLogger(TargetedHypernymAPI.class.getName()).log(Level.INFO,"Number of results: " + results.size());
         return Response.ok(entity).build();
@@ -87,7 +89,7 @@ public class TargetedHypernymAPI {
     // http://localhost:8080/thd/api/v1/extraction
     // http://localhost:8080/thd/api/v1/extraction?apikey=123456789&lang=en&format=xml&provenance=thd&knowledge_base=cached_results&entity_type=ne
     
-    // PURE REST API    
+    // PURE REST API
     @POST
     @Path("/extraction")
     public Response getHypernymsAPI(
@@ -104,8 +106,6 @@ public class TargetedHypernymAPI {
             @HeaderParam("Accept") String accept
             ) {
         
-//        return Response.ok("hi").build();        
-//        
         try {
             body = URLDecoder.decode(body, "UTF-8");
         } catch (UnsupportedEncodingException ex) {
@@ -252,7 +252,7 @@ public class TargetedHypernymAPI {
         
         TextProcessor r = TextProcessor.getInstance();        
         try {
-            List<Entity> results = r.processTextAPI_MT(body, lang, entity_type, knowledge_base, provs, priority_entity_linking);
+            List<Entity> results = r.processTextAPI_MT(body, lang, entity_type, knowledge_base, provs, priority_entity_linking, "all");
             Logger.getLogger(TargetedHypernymAPI.class.getName()).log(Level.INFO,"Number of extracted entities: " + results.size());
             
             if(format.equals("application/xml")){

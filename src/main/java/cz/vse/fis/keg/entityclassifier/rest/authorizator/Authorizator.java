@@ -39,7 +39,7 @@ public class Authorizator {
             BasicDBObject queryObj = new BasicDBObject();
             queryObj.append("apikey", apikey);
             
-            DBCursor cursor = MongoDBClient.getClient().getDB("thddb").getCollection("users").find(queryObj);
+            DBCursor cursor = MongoDBClient.getClient().getDB("thddb3").getCollection("users").find(queryObj);
             
             if(cursor.hasNext()){
                 cursor.close();
