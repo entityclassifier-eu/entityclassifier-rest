@@ -3,7 +3,7 @@
 
 Entityclassifier.eu (also known as THD) is a named entity recognizer whici performs pattern-based entity spotting, entity linking with the DBpedia (resp. Wikipedia) and YAGO knowledge bases, and unsupervised entity classification with classes from the DBpedia and YAGO ontologies.
 
-Checkout the DEMO [here](http://entityclassifier.eu/thd/)
+Checkout the DEMO [here](http://entityclassifier.eu/thd/).
 
 
 License
