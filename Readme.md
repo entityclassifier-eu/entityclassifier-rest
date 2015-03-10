@@ -22,7 +22,7 @@ Entityclassifier.eu (also known as THD) is a named entity recognizer whici perfo
 * [4] M. Dojchinovski, I. Lasek, O. Zamazal and T. Kliegr: Entityclassifier.eu and SemiTags: Entity Discovery, Linking and Classification with Wikipedia and DBpedia (to appear), TAC KBP 2014 Workshop, Text Analysis Conference 2014, Gaithersburg, USA, National Institute of Standards and Technology (NIST), February 2015
 
 **Other related publications:**
-* [4] [T. Kliegr, V. Zeman and M. Dojchinovski: Linked Hypernyms Dataset - Generation Framework and Use Cases, 3rd Workshop on Linked Data in Linguistics: Multilingual Knowledge Resources and Natural Language Processing, LREC 2014, Reykjavik, Iceland, Online proceedings, May 2014](http://www.dojchinovski.mk/public/data/LDL2014-KliegrZD.pdf)
+* [5] [T. Kliegr, V. Zeman and M. Dojchinovski: Linked Hypernyms Dataset - Generation Framework and Use Cases, 3rd Workshop on Linked Data in Linguistics: Multilingual Knowledge Resources and Natural Language Processing, LREC 2014, Reykjavik, Iceland, Online proceedings, May 2014](http://www.dojchinovski.mk/public/data/LDL2014-KliegrZD.pdf)
 
 
 License
