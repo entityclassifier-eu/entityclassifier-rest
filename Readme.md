@@ -1,15 +1,14 @@
-# REST API for the Entityclassifier.eu
+# Entityclassifier.eu - REST API
 ======================================
 
-We are gradually open sourcing the code.
+Entityclassifier.eu (also known as THD) is a named entity recognizer whici performs pattern-based entity spotting, entity linking with the DBpedia (resp. Wikipedia) and YAGO knowledge bases, and unsupervised entity classification with classes from the DBpedia and YAGO ontologies.
 
-Currently the code is in an unstable state.
+Checkout the DEMO [here](http://entityclassifier.eu/thd/)
 
-Stay tuned!
 
 License
 ------
 
 Licensed under the [GNU General Public License Version 3 (GNU GPLv3)](http://www.gnu.org/licenses/gpl.html).
 
-Copyright (c) 2012-2013 Milan Dojchinovski (<milan@dojchinovski.mk>)
+Copyright (c) 2012-2015 Milan Dojchinovski (<milan.dojchinovski@fit.cvut.cz>)
