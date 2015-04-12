@@ -52,7 +52,8 @@ import javax.ws.rs.core.MediaType;
 public class TargetedHypernymAPIv2 {
     
     @Context
-    Request request;        
+    Request request;
+    int reqCounter = 0;
     
     @GET
     @Path("/monitor")
